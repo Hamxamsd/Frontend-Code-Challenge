@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Form, Button, Table, Alert } from "react-bootstrap";
 
 const FilterProducts = () => {
+  // Declare state variables
   const [products, setProducts] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
   const [filterName, setFilterName] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Fetch data from API
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -21,6 +23,7 @@ const FilterProducts = () => {
     fetchData();
   }, []);
 
+  // Handle filtering of products
   const handleFilter = (event) => {
     event.preventDefault();
     if (filterName) {
@@ -42,6 +45,7 @@ const FilterProducts = () => {
   return (
     <div className="container">
       <h1 className="text-center my-5">Filter Products</h1>
+      {/* Form for filtering products */}
       <Form
         inline
         onSubmit={handleFilter}
@@ -62,7 +66,9 @@ const FilterProducts = () => {
           Filter
         </Button>
       </Form>
+      {/* Display error message if applicable */}
       {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
+      {/* Table for displaying filtered products */}
       <Table striped bordered hover>
         <thead>
           <tr>

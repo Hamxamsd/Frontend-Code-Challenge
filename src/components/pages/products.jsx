@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { AddCart } from '../../redux/cartSystem';
 
-
 const Products = () => {
+  // Use useDispatch hook to access dispatch function
   const dispatch = useDispatch();
+
+  // Initialize products state as an empty array
   const [products, setProducts] = useState([]);
 
+  // Fetch products data from API endpoint and update products state
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,6 +23,7 @@ const Products = () => {
     fetchData();
   }, []);
 
+  // Render the products as cards in a grid layout
   return (
     <div className="container">
       <h1 className="text-center my-5">Products</h1>
@@ -32,8 +36,11 @@ const Products = () => {
                 <h5 className="card-title">{product.name}</h5>
                 <p className="card-text mt-auto">${product.price}</p>
                 <button className="btn btn-dark mt-auto"
-                onClick={() => dispatch(AddCart(product))} 
-                >Add to Cart</button>
+                  // Dispatch AddCart action on button click with selected product as parameter
+                  onClick={() => dispatch(AddCart(product))} 
+                >
+                  Add to Cart
+                </button>
               </div>
             </div>
           </div>
