@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { AddCart } from '../../redux/cartSystem';
+import { AddCart } from '../../redux/cartSlice';
 
 const Products = () => {
   // Use useDispatch hook to access dispatch function

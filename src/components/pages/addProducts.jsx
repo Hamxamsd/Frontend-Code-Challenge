@@ -25,6 +25,7 @@ const AddProducts = () => {
     } catch (error) {
       console.error(error);
     }
+    alert("Prodcut Added!");
   };
 
   return (

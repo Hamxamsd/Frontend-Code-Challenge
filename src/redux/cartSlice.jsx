@@ -6,7 +6,7 @@ const initialState = {
 };
 
 // Create a slice for the cart system with a name, initial state, and reducer functions
-const cartSystem = createSlice({
+const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
@@ -18,5 +18,5 @@ const cartSystem = createSlice({
 });
 
 // Export the reducer function and action creators from the slice
-export const { AddCart } = cartSystem.actions;
-export default cartSystem.reducer;
+export const { AddCart } = cartSlice.actions;
+export default cartSlice.reducer;
