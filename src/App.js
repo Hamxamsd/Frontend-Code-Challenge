@@ -7,7 +7,6 @@ import { Routes, Route } from "react-router-dom";
 import AppHeader from "./components/pages/header";
 import Hero from "./components/pages/Hero";
 import Cart from "./components/pages/Cart";
-// import Products from "./components/pages/products";
 import AddProducts from "./components/pages/addProducts";
 import FilterProducts from "./components/pages/filterProducts";
 import Register from "./components/pages/Authentication/Register";
